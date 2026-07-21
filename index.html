@@ -4,15 +4,411 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta http-equiv="refresh" content="0; url=https://claude.ai/code/artifact/e0bf6f06-d9c4-4899-96e9-30afa614a207">
-<title>החלטות פנייה — הועבר</title>
-<style>
-body { font-family: -apple-system, "Segoe UI", Arial, sans-serif; display: grid; place-items: center; min-height: 90vh; background: #F2F4F3; color: #1A2422; }
-a { color: #0E6A5F; }
-</style>
+<title>החלטות פנייה — חברות מובילות</title>
 </head>
 <body>
-<p>הממשק עבר לגרסה מסונכרנת. אם לא הועברת אוטומטית —
-<a href="https://claude.ai/code/artifact/e0bf6f06-d9c4-4899-96e9-30afa614a207">לחץ כאן</a>.</p>
+<style>
+:root {
+  --bg: #F2F4F3;
+  --surface: #FFFFFF;
+  --surface-2: #EAEEEC;
+  --ink: #1A2422;
+  --muted: #5C6B67;
+  --line: #D8DEDB;
+  --accent: #0E6A5F;
+  --accent-ink: #FFFFFF;
+  --go: #1D7A46;
+  --go-bg: #E3F1E8;
+  --skip: #75808C;
+  --skip-bg: #EBEDF0;
+  --chip-donate: #1D7A46; --chip-donate-bg: #E3F1E8;
+  --chip-adopt: #1E5AA8;  --chip-adopt-bg: #E5EDF8;
+  --chip-meet: #6D4FA3;   --chip-meet-bg: #EEE9F7;
+  --chip-reach: #9A6B15;  --chip-reach-bg: #F7EFDD;
+  --chip-closed: #6B7672; --chip-closed-bg: #ECEFEE;
+  --shadow: 0 1px 2px rgba(23,32,30,.06), 0 4px 14px rgba(23,32,30,.05);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #131A18;
+    --surface: #1C2523;
+    --surface-2: #232E2B;
+    --ink: #E6EBE9;
+    --muted: #93A19C;
+    --line: #2E3B37;
+    --accent: #3FA895;
+    --accent-ink: #0D1614;
+    --go: #55B87E;
+    --go-bg: #1D3327;
+    --skip: #9AA5B1;
+    --skip-bg: #262D35;
+    --chip-donate: #6CC894; --chip-donate-bg: #1D3327;
+    --chip-adopt: #7FAEE8;  --chip-adopt-bg: #1C2C42;
+    --chip-meet: #B29BE0;   --chip-meet-bg: #2B2340;
+    --chip-reach: #DDB05E;  --chip-reach-bg: #3A2F17;
+    --chip-closed: #93A19C; --chip-closed-bg: #242D2A;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+  }
+}
+:root[data-theme="light"] {
+  --bg: #F2F4F3; --surface: #FFFFFF; --surface-2: #EAEEEC; --ink: #1A2422;
+  --muted: #5C6B67; --line: #D8DEDB; --accent: #0E6A5F; --accent-ink: #FFFFFF;
+  --go: #1D7A46; --go-bg: #E3F1E8; --skip: #75808C; --skip-bg: #EBEDF0;
+  --chip-donate: #1D7A46; --chip-donate-bg: #E3F1E8;
+  --chip-adopt: #1E5AA8;  --chip-adopt-bg: #E5EDF8;
+  --chip-meet: #6D4FA3;   --chip-meet-bg: #EEE9F7;
+  --chip-reach: #9A6B15;  --chip-reach-bg: #F7EFDD;
+  --chip-closed: #6B7672; --chip-closed-bg: #ECEFEE;
+  --shadow: 0 1px 2px rgba(23,32,30,.06), 0 4px 14px rgba(23,32,30,.05);
+}
+:root[data-theme="dark"] {
+  --bg: #131A18; --surface: #1C2523; --surface-2: #232E2B; --ink: #E6EBE9;
+  --muted: #93A19C; --line: #2E3B37; --accent: #3FA895; --accent-ink: #0D1614;
+  --go: #55B87E; --go-bg: #1D3327; --skip: #9AA5B1; --skip-bg: #262D35;
+  --chip-donate: #6CC894; --chip-donate-bg: #1D3327;
+  --chip-adopt: #7FAEE8;  --chip-adopt-bg: #1C2C42;
+  --chip-meet: #B29BE0;   --chip-meet-bg: #2B2340;
+  --chip-reach: #DDB05E;  --chip-reach-bg: #3A2F17;
+  --chip-closed: #93A19C; --chip-closed-bg: #242D2A;
+  --shadow: 0 1px 2px rgba(0,0,0,.3), 0 4px 14px rgba(0,0,0,.25);
+}
+html { background: var(--bg); }
+body {
+  direction: rtl;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  margin: 0;
+  line-height: 1.55;
+}
+.wrap { max-width: 860px; margin: 0 auto; padding: 0 20px 80px; }
+header.top {
+  position: sticky; top: 0; z-index: 10;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  padding: 14px 0 12px;
+  margin-bottom: 20px;
+}
+.top-inner { max-width: 860px; margin: 0 auto; padding: 0 20px; }
+h1 { font-size: 1.25rem; margin: 0 0 2px; font-weight: 700; letter-spacing: -0.01em; }
+.subtitle { color: var(--muted); font-size: 0.85rem; margin: 0 0 10px; }
+.progress-row { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.bar { flex: 1; height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.bar > div { height: 100%; background: var(--accent); width: 0%; transition: width .25s ease; }
+.count { font-size: 0.85rem; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.controls { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.tabs { display: flex; gap: 4px; background: var(--surface-2); border-radius: 8px; padding: 3px; }
+.tabs button {
+  border: 0; background: transparent; color: var(--muted); font: inherit; font-size: 0.83rem;
+  padding: 4px 12px; border-radius: 6px; cursor: pointer; white-space: nowrap;
+}
+.tabs button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); font-weight: 600; }
+.search {
+  flex: 1; min-width: 140px;
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface);
+  color: var(--ink); font: inherit; font-size: 0.85rem; padding: 5px 12px;
+}
+.search:focus { outline: 2px solid var(--accent); outline-offset: -1px; border-color: transparent; }
+.export-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.export-row button {
+  border: 1px solid var(--line); background: var(--surface); color: var(--ink);
+  font: inherit; font-size: 0.8rem; padding: 4px 12px; border-radius: 8px; cursor: pointer;
+}
+.export-row button:hover { border-color: var(--accent); color: var(--accent); }
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  box-shadow: var(--shadow); padding: 16px 18px; margin-bottom: 12px;
+  transition: opacity .2s ease;
+}
+.card.decided-again { border-inline-start: 4px solid var(--go); padding-inline-start: 15px; }
+.card.decided-skip { border-inline-start: 4px solid var(--skip); padding-inline-start: 15px; opacity: .78; }
+.card-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.card-head h2 { font-size: 1.02rem; margin: 0; font-weight: 700; }
+.sysname { color: var(--muted); font-size: 0.78rem; }
+.chip {
+  display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 1px 9px;
+  border-radius: 99px; white-space: nowrap;
+}
+.chip.donate { color: var(--chip-donate); background: var(--chip-donate-bg); }
+.chip.adopt  { color: var(--chip-adopt);  background: var(--chip-adopt-bg); }
+.chip.meet   { color: var(--chip-meet);   background: var(--chip-meet-bg); }
+.chip.reach  { color: var(--chip-reach);  background: var(--chip-reach-bg); }
+.chip.closed { color: var(--chip-closed); background: var(--chip-closed-bg); }
+.meta { color: var(--muted); font-size: 0.8rem; margin: 4px 0 0; display: flex; flex-wrap: wrap; gap: 4px 14px; font-variant-numeric: tabular-nums; }
+.meta b { color: var(--ink); font-weight: 600; }
+.activity {
+  background: var(--surface-2); border-radius: 8px; padding: 9px 12px;
+  font-size: 0.84rem; margin-top: 10px; color: var(--ink); white-space: pre-wrap; word-break: break-word;
+}
+.activity .when { color: var(--muted); font-size: 0.76rem; display: block; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
+.no-activity { color: var(--muted); font-size: 0.8rem; margin-top: 10px; font-style: italic; }
+.actions { display: flex; gap: 8px; margin-top: 12px; align-items: center; }
+.actions button {
+  font: inherit; font-size: 0.88rem; font-weight: 600; border-radius: 9px; cursor: pointer;
+  padding: 7px 18px; border: 1px solid transparent;
+}
+button.again { background: var(--go); color: #fff; }
+button.again:hover { filter: brightness(1.08); }
+button.skip { background: var(--skip-bg); color: var(--skip); border-color: var(--line); }
+button.skip:hover { filter: brightness(.97); }
+button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.verdict { display: flex; gap: 10px; align-items: center; margin-top: 12px; font-size: 0.85rem; font-weight: 600; }
+.verdict.again { color: var(--go); }
+.verdict.skip { color: var(--skip); }
+.undo {
+  font: inherit; font-size: 0.76rem; border: 0; background: none; color: var(--muted);
+  cursor: pointer; text-decoration: underline; padding: 0;
+}
+.undo:hover { color: var(--accent); }
+.empty { text-align: center; color: var(--muted); padding: 60px 0 30px; font-size: 0.9rem; }
+.done-banner {
+  background: var(--go-bg); color: var(--go); border-radius: 12px; padding: 14px 18px;
+  font-weight: 600; font-size: 0.92rem; margin-bottom: 16px; display: none;
+}
+.toast {
+  position: fixed; bottom: 22px; inset-inline-start: 50%; transform: translateX(50%);
+  background: var(--ink); color: var(--bg); font-size: 0.84rem; padding: 8px 18px;
+  border-radius: 99px; box-shadow: var(--shadow); opacity: 0; pointer-events: none;
+  transition: opacity .25s ease;
+}
+.toast.show { opacity: 1; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<header class="top"><div class="top-inner">
+  <h1>החלטות פנייה מחודשת</h1>
+  <p class="subtitle">חברות מובילות שכבר במאגר — עוברים אחת-אחת ומחליטים: לפנות שוב או להתעלם. ההחלטות נשמרות בענן ומסונכרנות אוטומטית בין כל המכשירים.</p>
+  <p class="subtitle" id="syncStatus" style="margin-top:-6px"></p>
+  <div class="progress-row">
+    <div class="bar"><div id="barfill"></div></div>
+    <span class="count" id="counter"></span>
+  </div>
+  <div class="controls">
+    <div class="tabs" id="tabs" role="tablist">
+      <button data-f="pending" aria-pressed="true">ממתינות</button>
+      <button data-f="again" aria-pressed="false">לפנות שוב</button>
+      <button data-f="skip" aria-pressed="false">להתעלם</button>
+      <button data-f="all" aria-pressed="false">הכל</button>
+    </div>
+    <input class="search" id="search" type="search" placeholder="חיפוש חברה…" aria-label="חיפוש חברה">
+  </div>
+  <div class="export-row">
+    <button id="copyAgain">העתקת רשימת "לפנות שוב"</button>
+    <button id="dlCsv">הורדת כל ההחלטות (CSV)</button>
+    <a href="https://special8.monday.com/boards/18423061176" target="_blank" rel="noopener" style="font-size:.8rem;align-self:center;color:var(--accent)">פתיחת הלוח במאנדיי ↗</a>
+  </div>
+</div></header>
+
+<div class="wrap">
+  <div class="done-banner" id="doneBanner"></div>
+  <div id="list"></div>
+  <div class="empty" id="empty" style="display:none"></div>
+</div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+const DATA = [{"name": "אורבונד תעשיות גבס ומוצריו", "sysName": "אורבונד תעשיות גבס ומוצריו בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "מוצרי בנייה ותשתית", "revenue": "400", "employees": "190"}, {"name": "אורמת מערכות", "sysName": "אורמת מערכות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "אנרגיה חלופית וסולארית", "revenue": "3,254.9", "employees": "1,402*"}, {"name": "אלקטרה מוצרי צריכה", "sysName": "אלקטרה מוצרי צריכה", "lastDate": "16/01/2018", "activity": "[אימייל] — שוש רבן נפגשה והתלהבה פוטרה. נקבעה פגישה בגלל אריאל ל10/03 עם המנכל. אמר לדבר איתו עוד שבועיים. אמר לאריאל שיאמץ . דחה אותו לאחרי העצמאות. אריאל התקשר והיא התחילה לדבר איתו על התרומה של ה10 שהם העבירו.. סוג של עבר לבקי", "status": "תרומה / לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרי חשמל ביתיים", "revenue": "7,406", "employees": "7,049"}, {"name": "אמות השקעות", "sysName": "אמות השקעות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "1,166.4", "employees": "179"}, {"name": "אנרג'יקס - אנרגיות מתחדשות", "sysName": "אנרג'יקס - אנרגיות מתחדשות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "אנרגיה חלופית וסולארית", "revenue": "897.6", "employees": "267"}, {"name": "גולן תעשיות מתחדשות", "sysName": "גולן תעשיות מתחדשות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "פלסטיק", "revenue": "406.3", "employees": "292"}, {"name": "גלוברנדס", "sysName": "גלוברנדס בע\"מ", "lastDate": "", "activity": "", "status": "תרומה / לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרי טבק", "revenue": "753.8", "employees": "302"}, {"name": "גניר (1992)", "sysName": "גניר (1992) בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "474.5", "employees": "227"}, {"name": "הכשרה חברה לביטוח", "sysName": "הכשרה חברה לביטוח בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "חברות ביטוח", "branch": "חברות ביטוח", "revenue": "1,834", "employees": "478"}, {"name": "חד אסף תעשיות", "sysName": "חד אסף תעשיות", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "מתכת בסיסית", "revenue": "2,059.7", "employees": "684"}, {"name": "ישרוטל", "sysName": "ישרוטל בע\"מ", "lastDate": "", "activity": "", "status": "תרומה / לא ענו (סגור)", "sector": "שרותים", "branch": "בתי מלון", "revenue": "1,915.4", "employees": "5,500"}, {"name": "כתר פלסטיק", "sysName": "כתר פלסטיק בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "פלסטיק", "revenue": "5,640.0*", "employees": "4,700*"}, {"name": "מבנה נדל\"ן (כ.ד)", "sysName": "מבנה נדל'ן (כ.ד) בע'מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "1,424.8", "employees": "194"}, {"name": "מוצרי מעברות", "sysName": "מוצרי מעברות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "604.2", "employees": "557"}, {"name": "מלם-תים", "sysName": "מלם תים", "lastDate": "21/05/2018", "activity": "[מעקב] — נקבעה פגישה ל10 וזמנתי את מנדי וטירן. פגישה נחמדה. לדבריה היא וגם אילן לא יכולים לקבל כזאת החלטה אלא רק הבוס. שולח מכתב אימוץ והם ינסו ביחד הלאה. שלחתי ב17. מנדי שלח הודעה. הודיעה לבקי שאפשר לבדוק שנה הבאה. לבדוק מול מנדי. מנדי אומר להזמין אותם לביקור. מסננת ומשאירים לרינה", "status": "תרומה", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "3,781.3", "employees": "4,854"}, {"name": "סנו - מפעלי ברונוס", "sysName": "סנו מפעלי ברונוס בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "תעשיה", "branch": "פרמצבטיקה, קוסמטיקה, דטרגנטים", "revenue": "2,273.9", "employees": "1,996"}, {"name": "פז חברת נפט", "sysName": "פז חברת נפט בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "מסחר", "branch": "דלק, גז ואנרגיה", "revenue": "11,906", "employees": "3,970"}, {"name": "רפק תקשורת ותשתיות", "sysName": "רפק תקשורת ותשתיות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "מסחר", "branch": "ציוד תקשורת", "revenue": "754", "employees": "598"}, {"name": "שופרסל", "sysName": "שופרסל בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "מסחר", "branch": "רשתות מזון", "revenue": "15,644", "employees": "14,281"}, {"name": "שינטרקו", "sysName": "שינטרקו בע\"מ", "lastDate": "", "activity": "", "status": "תרומה / לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות מזון", "revenue": "700*", "employees": "15*"}, {"name": "תעבורה אחזקות", "sysName": "תעבורה אחזקות בע\"מ", "lastDate": "", "activity": "", "status": "תרומה", "sector": "שרותים", "branch": "תחבורה", "revenue": "7,846", "employees": "5,301"}, {"name": "ICL", "sysName": "ICL", "lastDate": "06/01/2026", "activity": "[הערה] — אימוץ דרך זכריה: לא. תרומה חד פעמית", "status": "תואמה פגישה", "sector": "תעשיה", "branch": "כימיה", "revenue": "25,311.7", "employees": "12,349"}, {"name": "איילון חברה לביטוח", "sysName": "איילון חברה לביטוח בע\"מ", "lastDate": "21/07/2026", "activity": "[שיחה] — ורד החזירה מייל שיעלו את הנושא לבחינה  21.07.26", "status": "תואמה פגישה", "sector": "חברות ביטוח", "branch": "חברות ביטוח", "revenue": "4,752.7", "employees": "1,393"}, {"name": "אלוני-חץ", "sysName": "אלוני חץ", "lastDate": "21/05/2025", "activity": "[פגישה] — פגישה טובה, תרמו סכום חד פעמי של 36,000 ש\"ח — תוצאה: פגישה טובה, תרמו סכום חד פעמי של 36,000 ש\"ח", "status": "תואמה פגישה", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "2,271.4", "employees": "616"}, {"name": "אלרוב", "sysName": "אלרוב", "lastDate": "01/02/2026", "activity": "[הערה] — סטטוס פרסום: פורסם", "status": "תואמה פגישה", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "1,238.8", "employees": "2,006"}, {"name": "אסם", "sysName": "אסם", "lastDate": "07/06/2020", "activity": "[פגישה] — לא יכולים לאמץ יחידה כי החברת בד היא נסטלה והיא בינלאומיתי. לא הוצע להם את מרכז רגש — תוצאה: לא יכולים לאמץ יחידה כי החברת בד היא נסטלה והיא בינלאומיתי. לא הוצע להם את מרכז רגש", "status": "תואמה פגישה", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "4,000.0*", "employees": "4,200*"}, {"name": "בזק", "sysName": "בזק", "lastDate": "23/06/2025", "activity": "[פגישה] — היתה פגישה מעולה. רז ביקשה שניצור קשר בסוף26.הפרויקט לא נבחר בתחילת 26 בחברה — תוצאה: ממתין ליצירת קשר", "status": "תואמה פגישה", "sector": "שרותים", "branch": "תקשורת וטלויזיה", "revenue": "8,884", "employees": "11,132*"}, {"name": "לוריאל ישראל", "sysName": "לוריאל ישראל", "lastDate": "27/08/2023", "activity": "[מעקב] — שלחתי שוב לדניאלה בקשה לפגישה עם אלי", "status": "תואמה פגישה / לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "794", "employees": "979"}, {"name": "מאוחדת", "sysName": "מאוחדת", "lastDate": "28/06/2026", "activity": "[פגישה]", "status": "תואמה פגישה", "sector": "שרותי בריאות", "branch": "בריאות", "revenue": "9,700.0*", "employees": "5,700*"}, {"name": "מכשירי תנועה", "sysName": "מכשירי תנועה", "lastDate": "15/07/2025", "activity": "[מעקב] — מנדי רשם לעצמו בצד", "status": "תואמה פגישה", "sector": "מסחר", "branch": "רכב", "revenue": "2,000.0*", "employees": "300*"}, {"name": "מנורה מבטחים", "sysName": "מנורה מבטחים", "lastDate": "", "activity": "[פגישה] — העברו לאחר מכתב שלי אליהם תרומה חד פעמית של 10,000 שח — תוצאה: העברו לאחר מכתב שלי אליהם תרומה חד פעמית של 10,000 שח", "status": "תואמה פגישה", "sector": "חברות ביטוח", "branch": "חברות ביטוח", "revenue": "9,170.2", "employees": "3,716"}, {"name": "קבוצת ברן", "sysName": "קבוצת ברן", "lastDate": "05/07/2026", "activity": "[שיחה] — סירבו לאמץ. באפריל 26", "status": "תואמה פגישה", "sector": "שרותים", "branch": "הנדסה תכנון וניהול פרוייקטים", "revenue": "684.6", "employees": "1,041"}, {"name": "רמי לוי שווק השקמה", "sysName": "רמי לוי שיווק השקמה", "lastDate": "13/01/2026", "activity": "[הערה] — סטטוס פרסום: חדש", "status": "תואמה פגישה", "sector": "מסחר", "branch": "רשתות מזון", "revenue": "7,383.2", "employees": "7,118"}, {"name": "אס. ג'י. אס. חברה לבניין", "sysName": "SGS אס.ג'י.אס חברה לבניין בע\"מ", "lastDate": "13/07/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן SGS אס.ג'י.אס חברה לבניין בע\"מ", "status": "פנינו", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "1,260", "employees": "550"}, {"name": "נחשון ביצוע והנדסה אזרחית", "sysName": "נחשון ביצוע והנדסה אזרחית בע\"מ", "lastDate": "22/06/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן נחשון ביצוע והנדסה אזרחית בע\"מ", "status": "פנינו", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "613", "employees": "78"}, {"name": "קבוצת שפיר", "sysName": "קבוצת שפירא", "lastDate": "14/07/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן קבוצת שפירא", "status": "פנינו", "sector": "בניה", "branch": "תשתית", "revenue": "5,085", "employees": "3,500"}, {"name": "קידר מבנים", "sysName": "קידר מבנים", "lastDate": "11/06/2026", "activity": "[הערה] — לא רלוונטי עבורם כרגע - עדכון מינואר 26", "status": "פנינו", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "650", "employees": "160"}, {"name": "שתית", "sysName": "שתית בע\"מ", "lastDate": "23/06/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן שתית בע\"מ", "status": "פנינו / לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "655", "employees": "180"}, {"name": "AIG", "sysName": "AIG", "lastDate": "07/07/2026", "activity": "[אימייל] — שלחתי פניה לגיוס תרומה. מחכה לתגובתם", "status": "בתהליך", "sector": "חברות ביטוח", "branch": "חברות ביטוח", "revenue": "1,805.5", "employees": "838"}, {"name": "DHL (ישראל)", "sysName": "DHL ישראל", "lastDate": "06/07/2026", "activity": "[מעקב] — התקיימה פגישה שאירגנתי בעבר — אלייה נכח בפגישה במקום גבי ויצא חיובי מאוד. ענו לאחר מס' חודשים שזו תקופה פחות מוצלחת לבחון את הנושא. תיזכרתי שוב בינואר 2026. וכעת פעם נוספת", "status": "בתהליך", "sector": "שרותים", "branch": "בלדרות", "revenue": "1,490", "employees": "554"}, {"name": "IBM", "sysName": "לא נמצא במערכת", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "2,000.0*", "employees": "2,000*"}, {"name": "SAP", "sysName": "לא נמצא במערכת", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "תוכנה", "revenue": "1,367.4", "employees": "866"}, {"name": "SQLINK", "sysName": "SQLINK", "lastDate": "24/04/2023", "activity": "[מעקב] — שלחתי שוב מכתב בקשה עבור תמיר. ענו שזה עבר להנהלת חשבונות וידברו איתי אם אקטואלי", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "837.9", "employees": "2,367"}, {"name": "א.א.א. טסה", "sysName": "א.א.א טסה", "lastDate": "27/08/2023", "activity": "[מעקב] — שלחתי שוב", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרי בניה, אינסטלציה ותשתית", "revenue": "725*", "employees": "140*"}, {"name": "א.מ.ת. מיחשוב", "sysName": "א.מ.ת מיחושב", "lastDate": "11/07/2021", "activity": "[מעקב] — סינון לא ממש עדין 2023 יואב עזב שם וזה עבר לפימי", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "1,453", "employees": "1,388"}, {"name": "אביסרור משה ובניו", "sysName": "אביסרור משה ובניו", "lastDate": "28/11/2022", "activity": "[מעקב] — סינון לא עדין... אין תשובה", "status": "לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "573.4", "employees": "159"}, {"name": "אבן קיסר", "sysName": "אבן קיסר", "lastDate": "27/05/2018", "activity": "[מעקב] — מחכה להוראה מאפרת", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי בנייה ותשתית", "revenue": "1,639.8", "employees": "1,532"}, {"name": "אודיוקודס", "sysName": "אודיוקודס", "lastDate": "02/03/2022", "activity": "[מעקב] — אם הוא לא ענה סימן שזה לא רלוונטי", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "ציוד ומערכות תקשורת", "revenue": "896.1", "employees": "950*"}, {"name": "אילקס מדיקל", "sysName": "אילקס מדיקל", "lastDate": "25/06/2020", "activity": "[מעקב] — מנדי שלח לענת הודעה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "920.4", "employees": "417"}, {"name": "אינמוד", "sysName": "אינמוד", "lastDate": "06/03/2022", "activity": "[מעקב] — סינון עדין (העברתי כבר למשה)", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "ציוד רפואי", "revenue": "1,475.6", "employees": "578"}, {"name": "איסטרוניקס", "sysName": "איסטרוניקס", "lastDate": "21/08/2019", "activity": "[מעקב] — אריאלה הביאה לי את המייל שלה. לא הבנתי אם בשביל לשלוח לה או שהיא שולחת לי. אז מחכה עוד יום. שלחתי לה. פגישה ב", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רכיבים אלקטרוניים", "revenue": "508", "employees": "110"}, {"name": "איסתא", "sysName": "איסתא", "lastDate": "27/08/2023", "activity": "[מעקב] — היה החלטת דירקטוריון לא לתרום בשנה הקרובה... בגלל הרפורמה", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תיירות", "revenue": "417.5", "employees": "640"}, {"name": "אירונאוטיקס", "sysName": "אירונאוטיקס", "lastDate": "28/07/2019", "activity": "[מעקב] — השגתי את המייל ושלחתי לה", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "אלקטרוניקה ותעופה", "revenue": "1,407.8", "employees": "1,200"}, {"name": "אלקטרה מגורים", "sysName": "אלקטרה מגורים", "lastDate": "22/06/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן אלקטרה מגורים", "status": "לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "558", "employees": "35"}, {"name": "אמדוקס", "sysName": "אמדוקס", "lastDate": "22/05/2022", "activity": "[מעקב] — שוקי ביקש שניפגש עם הסמנכלית יהודית בשביל לא לעכב את התרומה. גלית המזכירה שלה תיצור איתי קשר לתאם נקבע פגישה ל", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "תוכנה", "revenue": "18,518.5", "employees": "30,288*"}, {"name": "אפלייד מטריאלס ישראל", "sysName": "אפלייד מטיריאלס", "lastDate": "09/03/2021", "activity": "[מעקב] — שלחתי שוב. סינון", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "אלקטרוניקה ותעופה", "revenue": "6,500.0*", "employees": "2,400"}, {"name": "אפספלייר", "sysName": "אפספלייר", "lastDate": "16/03/2023", "activity": "[מעקב] — שלחתי שוב. לקבוע מול האחראית. נקבע ל29 התברר שרק שילוב", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "פרסום מקוון ופיתוח יישומים", "revenue": "1,000.0*", "employees": "1,500*"}, {"name": "ארד", "sysName": "ארד", "lastDate": "04/12/2023", "activity": "[מעקב] — שלחתי שוב. ברגע שיהיה לה תשובה תחזור אליי", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "טכנולוגיות מים סינון והשקייה", "revenue": "1,457.8", "employees": "1,180"}, {"name": "ארכה", "sysName": "ארכה", "lastDate": "23/03/2022", "activity": "[מעקב] — העבירה לליאון וכרגע לא מעוניין", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "חמרי חשמל", "revenue": "860", "employees": "500"}, {"name": "ביטוח ישיר", "sysName": "ביטוח ישיר", "lastDate": "01/12/2019", "activity": "[מעקב] — 40 דרך רינה", "status": "לא ענו (סגור)", "sector": "חברות ביטוח", "branch": "חברות ביטוח", "revenue": "3,522.1", "employees": "1,564"}, {"name": "בלדי", "sysName": "בלדי", "lastDate": "20/08/2019", "activity": "[מעקב] — הוצאתי מייל דחוף לארז", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "1,232.5", "employees": "338"}, {"name": "בנק לאומי", "sysName": "בנק לאומי", "lastDate": "23/01/2018", "activity": "[אימייל] — נשלח מייל ראשון. משאיר לרינה. מהקרן של אלפרד אמרה למנדי שיכולה לקשר", "status": "לא ענו (סגור)", "sector": "בנקים", "branch": "בנקים", "revenue": "23,108", "employees": "7,833"}, {"name": "בריל תעשיות נעליים", "sysName": "בריל תעשיות נעליים", "lastDate": "27/11/2022", "activity": "[מעקב] — סינון עדין.. נראה לה שזה לא כרגע", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "טקסטיל והלבשה והנעלה", "revenue": "579.2", "employees": "174"}, {"name": "ברמד", "sysName": "ברמד", "lastDate": "31/05/2022", "activity": "[מעקב] — שלחתי וואטסאפ סינון", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי מתכת", "revenue": "700*", "employees": "450"}, {"name": "ג'יימס ריצ'רדסון", "sysName": "ג'יימס ריצ'רדסון", "lastDate": "11/05/2020", "activity": "[מעקב] — שלחתי מייל שיתרום גם השנה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות קימעונאיות", "revenue": "1,517", "employees": "1,038"}, {"name": "גטר גרופ", "sysName": "גטר גרופ", "lastDate": "02/04/2024", "activity": "[מעקב] — ממליצה לחזור אחרי פסח", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "ציוד אלקטרוניקה", "revenue": "800*", "employees": "560*"}, {"name": "גינדי החזקות", "sysName": "גינדי החזקות", "lastDate": "02/06/2022", "activity": "[מעקב] — בודקים. קיבלנו סינון במייל", "status": "לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "1,000.0*", "employees": "80*"}, {"name": "דה סטנלי וורקס ישראל", "sysName": "סטנלי וורקס ישראל", "lastDate": "04/02/2024", "activity": "[מעקב] — שלחתי שוב שאלה", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "פלסטיק", "revenue": "500*", "employees": "650*"}, {"name": "דלק", "sysName": "דלק רכב", "lastDate": "27/02/2020", "activity": "[מעקב] — לא רלוונטי גם לא ביקור של גבי אצלם. אריאל אמור לדבר עם יפתח", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "דלק, גז ואנרגיה", "revenue": "11,961", "employees": "2,440*"}, {"name": "הוט", "sysName": "HOT", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תקשורת וטלויזיה", "revenue": "4,072", "employees": "1,400*"}, {"name": "הום סנטר (עשה זאת בעצמך)", "sysName": "הום סנטר", "lastDate": "20/11/2025", "activity": "[פנייה] — נושא: נשלח מייל לבקשת פגישה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות קימעונאיות", "revenue": "600*", "employees": "1,100*"}, {"name": "הנסון ישראל (HeidelbergCement Group)", "sysName": "לא נמצא במערכת", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי בנייה ותשתית", "revenue": "1,458.5", "employees": "514*"}, {"name": "ווישיי ישראל", "sysName": "לא נמצא במערכת", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "רכיבים אלקטרוניים", "revenue": "1,646.3", "employees": "2,300"}, {"name": "זול ובגדול", "sysName": "זול ובגדול", "lastDate": "02/01/2020", "activity": "[אימייל] — נשלח מייל ראשון. סינן את מנדי בטלפון", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות מזון", "revenue": "570*", "employees": "650*"}, {"name": "זוקו שילובים", "sysName": "זוקו שילובים", "lastDate": "11/12/2017", "activity": "[אימייל] — נקבעה פגישה ל08.02 עם סמנכל משאבי אנוש. מנדי החליט לרדת מה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מכונות וציוד", "revenue": "856", "employees": "581"}, {"name": "זנלכל", "sysName": "זנלכל", "lastDate": "09/02/2023", "activity": "[מעקב] — סינון מהיר מאוד. לא רלוונטי", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "481.6", "employees": "304"}, {"name": "חישתיל", "sysName": "חישתיל", "lastDate": "13/05/2020", "activity": "[מעקב] — עמית הסביר לי שאין סיכוי בעולם שהם יתרמו אפילו שקל... כי יש להם פרוייקט שהם מגוייסים אליו של בתי ספר חקלאיים", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "תשומות לחקלאות", "revenue": "400*", "employees": "600"}, {"name": "טלקאר", "sysName": "טל קאר", "lastDate": "14/12/2025", "activity": "[פנייה] — נושא: נשלח מייל לתיאום פגישה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רכב", "revenue": "4,000.0*", "employees": "228*"}, {"name": "טמבור", "sysName": "טמבור", "lastDate": "27/08/2023", "activity": "[מעקב] — שלחתי שוב לא התייחסו", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי בנייה ותשתית", "revenue": "1,400.0*", "employees": "850*"}, {"name": "טמפו", "sysName": "טמפו", "lastDate": "25/08/2019", "activity": "[מעקב] — ז'קי בחופשה כל אוגוסט... היא לא יודעת מה להגיד.. אולי לשלוח שוב?", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "2,505.3", "employees": "1,542"}, {"name": "יוניון מוטורס", "sysName": "יוניון מוטורס", "lastDate": "14/12/2025", "activity": "[פנייה] — נושא: נשלח מייל לתיאום פגישה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רכב", "revenue": "4,800.0*", "employees": "300*"}, {"name": "יוסי אברהמי עבודות הנדסה אזרחית", "sysName": "יוסי אברהמי עבודות הנדסה אזרחית", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "530", "employees": "100"}, {"name": "ישקר", "sysName": "ישקר", "lastDate": "17/04/2019", "activity": "[מעקב] — נשלח מכתב אימוץ. הסכינמו לתת חצי. שלחתי מייל לאריה . מתורגמן מערבית", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי מתכת", "revenue": "3,100.0*", "employees": "3,000*"}, {"name": "ישראל קנדה", "sysName": "ישראל קנדה (ט.ר) בע\"מ", "lastDate": "21/06/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן ישראל קנדה (ט.ר) בע\"מ", "status": "מאמצות / לא ענו (סגור)", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "507", "employees": "104"}, {"name": "ישרס - חברה להשקעות", "sysName": "ישרס - חברה להשקעות בע\"מ", "lastDate": "18/01/2026", "activity": "[פנייה] — נושא: נשלח מייל לתיאום פגישה", "status": "לא ענו (סגור)", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "702.2", "employees": "86"}, {"name": "כ.נ. מחסני השוק", "sysName": "מחסני השוק", "lastDate": "17/12/2025", "activity": "[פנייה] — נושא: נשלח מייל לתיאום פגישה.21.21.25 ענו כי העבירו את המייל למנכל החברה.; פגישה: העבירו את המייל למנכל — תוצאה: העבירו את המייל למנכל", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות מזון", "revenue": "1,900.0*", "employees": "3,000*"}, {"name": "כמיפל", "sysName": "כמיפל בעמ", "lastDate": "14/12/2025", "activity": "[פנייה] — נושא: נשלח מייל לבקשת פגישה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "1,550", "employees": "750"}, {"name": "לייבפרסון", "sysName": "לייבפרסון ישראל", "lastDate": "15/11/2022", "activity": "[מעקב] — דיברתי עם חגית. האתר כבר לא בניהול בכיר ואין מי שיקבל החלטה על תרומות", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "פרסום מקוון ופיתוח יישומים", "revenue": "1,156.3", "employees": "1,540*"}, {"name": "ליימן שליסל", "sysName": "ליימן שליסל", "lastDate": "21/02/2019", "activity": "[מעקב] — תבדוק מולו שוב ותחזור אליי. חזרה עם סינון די עדין ( בפרוייקטים הבאים וכו')", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות מזון", "revenue": "613", "employees": "554"}, {"name": "מאסטרפוד", "sysName": "מאסטרפוד", "lastDate": "10/11/2022", "activity": "[מעקב] — סינון מגעיל. רק אריק מטפל בזה והיא העבירה הלאה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות מזון", "revenue": "1,122", "employees": "225"}, {"name": "מהדרין", "sysName": "מהדרין", "lastDate": "11/09/2022", "activity": "[מעקב] — סינון", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרים ושרותים לחקלאות", "revenue": "965.3", "employees": "299"}, {"name": "מודיעין אזרחי", "sysName": "מודיעין אזרחי", "lastDate": "08/06/2022", "activity": "[מעקב] — יחיאל מוסר שזה לא רלוונטי", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "שמירה, אבטחה וניקיון", "revenue": "700*", "employees": "7,500*"}, {"name": "מטריקס", "sysName": "מטריקס", "lastDate": "19/04/2021", "activity": "[מעקב] — שוב עדי אומרת שזה מנשה והוא יחזור אליי חזר אליי ומתברר שבקי כבר חופרת להם. יהיה וועדה עוד שבועיים", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "5,579.5", "employees": "11,570"}, {"name": "מיטרוניקס", "sysName": "מיטרוניקס", "lastDate": "18/10/2020", "activity": "[מעקב] — פגישת זום טובה. נשלח מכתב אימוץ ענו שנהיה בקשר אחרי נובמבר", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "אלקטרוניקה ותעופה", "revenue": "1,626.5", "employees": "1,193"}, {"name": "מיקרוסופט", "sysName": "מיקרוסופט ישראל", "lastDate": "03/04/2019", "activity": "[מעקב] — הצאתי שוב מייל בהמלצת אופיר", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "תוכנה", "revenue": "3,500.0*", "employees": "2,700*"}, {"name": "מלונות דן", "sysName": "מלונות דן", "lastDate": "26/10/2017", "activity": "[אימייל] — היה פגישה לפני חודשיים. אמור כל יום לחזור לגבי עם תשובה סופית. עידוד מיפתח יוסיף — תוצאה: התקבלה תשובה", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "בתי מלון", "revenue": "1,497.3", "employees": "3,202"}, {"name": "מלונות פתאל", "sysName": "מלונות פתאל", "lastDate": "18/03/2018", "activity": "[אימייל] — נשלח מייל ראשון. נקבעה פגישה עם אחראית תרומות ב26.3. ביקשה את המספר של טירן. ייתכן שישראל חפר לפתאל 02/02/20 שלחתי שוב. סינון במייל", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "בתי מלון", "revenue": "7,444.4", "employees": "19,500"}, {"name": "מליסרון", "sysName": "מליסרון", "lastDate": "08/03/2021", "activity": "[מעקב] — בודקת מול ליאורה וחוזרת אליי התקשרה לבדוק גם איפה המייל.. סינון בגלל קורונה", "status": "לא ענו (סגור)", "sector": "ייזום ונדל\"ן מניב", "branch": "ייזום ונדל\"ן מניב", "revenue": "2,016", "employees": "334"}, {"name": "מנטפילד", "sysName": "מנטפילד", "lastDate": "31/05/2022", "activity": "[מעקב] — מתייאש ממנו", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "שילוח ועמילות מכס", "revenue": "830*", "employees": "507*"}, {"name": "מנפאואר ישראל", "sysName": "מנפאואר ישראל", "lastDate": "04/12/2022", "activity": "[מעקב] — סינון עדין. כרגע לא רלוונטי", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "כח אדם", "revenue": "1,448.7", "employees": "23,210"}, {"name": "מפטגון", "sysName": "מפטגון", "lastDate": "26/06/2022", "activity": "[מעקב] — ניסתה לתפוס אותי להגיד שכרגע זה לא מתאים", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי מתכת", "revenue": "1,046.4", "employees": "1,498"}, {"name": "מקורות", "sysName": "מקורות", "lastDate": "27/11/2025", "activity": "[פנייה] — נושא: נשלח מייל בקשה לתיאום פגישה מייל קודם היה לפני כחצי שנה ולא נענה", "status": "לא ענו (סגור)", "sector": "תשתיות", "branch": "תשתיות", "revenue": "5,359", "employees": "1,569"}, {"name": "מרינה פטריות הגליל", "sysName": "מרינה פטריות הגליל", "lastDate": "18/07/2022", "activity": "[מעקב] — סינון במייל", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרים ושרותים לחקלאות", "revenue": "680", "employees": "467"}, {"name": "נובולוג", "sysName": "נובולוג", "lastDate": "03/11/2019", "activity": "[מעקב] — רוצים יחידה. נשלח מכתב", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "2,021.6", "employees": "936"}, {"name": "נטפים", "sysName": "נטפים", "lastDate": "19/10/2017", "activity": "[אימייל] — חודשיים מאוד עמוסים. אם יתפנה משהו לפני המזכירה תעדכן. ב1 היא תבדוק עם רן ותחזור אליי. ב4 ביקשה לשלוח שוב. שלחתי. אליה. ב16.01 עומס כבד לבדוק עוד שבועיים. ב1.2 סוג של פאדיחה כי אמרתי שהיא אמרה לחזור עוד שבועיים והתברר שאני אמרתי. הביאה לי את המספר של עופר רימון. אחראי על התרומות אצלם בחברה 0525013060. יושב שבעה. לפנות לא לפני סוף שבוע הבא. מנדי מטפל. קבעתי פגישה עם עופר ל21. ביקש לדחות ל5. נקבעה פגישה ל20", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "טכנולוגיות מים סינון והשקייה", "revenue": "3,840.6", "employees": "4,530"}, {"name": "ניופאן", "sysName": "ניופאן", "lastDate": "04/04/2022", "activity": "[מעקב] — סינון עדין", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרי חשמל ביתיים", "revenue": "600*", "employees": "200*"}, {"name": "נילית", "sysName": "נילית", "lastDate": "02/01/2020", "activity": "[מעקב] — שלחתי שוב. 04-6544621 . לדבר עם רעיה על בגדים. למסור זאת לאלוף", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "טקסטיל והלבשה והנעלה", "revenue": "755.3", "employees": "818"}, {"name": "נתיבי הגז הטבעי לישראל (נתג\"ז)", "sysName": "נתיבי הגז הטבעי לישראל", "lastDate": "", "activity": "", "status": "לא ענו (סגור)", "sector": "תשתיות", "branch": "תשתיות", "revenue": "1,218.7", "employees": "165"}, {"name": "סודה סטרים", "sysName": "סודה סטרים", "lastDate": "27/08/2023", "activity": "[מעקב] — שלחתי שוב סינון במייל", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "3,000.0*", "employees": "2,600*"}, {"name": "סונול ישראל", "sysName": "סונול ישראל בע\"מ", "lastDate": "29/06/2026", "activity": "[פנייה] — פנייה מתוך הזדמנויות — נוצר מתוך הזדמנות בדאן סונול ישראל בע\"מ", "status": "מאמצות / לא ענו (סגור)", "sector": "מסחר", "branch": "דלק, גז ואנרגיה", "revenue": "6,543.0*", "employees": "1,800*"}, {"name": "סופר-פארם (חנויות הרשת והמשרד המרכזי)", "sysName": "סופר פארם", "lastDate": "08/01/2024", "activity": "[אימייל] — סינון. עניתי כרגיל", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות קימעונאיות", "revenue": "6,000.0*", "employees": "9,000*"}, {"name": "סטרטסיס", "sysName": "סטרטסיס", "lastDate": "15/11/2018", "activity": "[מעקב] — סינון", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "אלקטרוניקה ותעופה", "revenue": "2,118.3", "employees": "1,779"}, {"name": "סלברייט", "sysName": "סלברייט", "lastDate": "05/01/2023", "activity": "[מעקב] — וואטסאפ . סינון סופי", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "תוכנה", "revenue": "1,484.4", "employees": "1,167"}, {"name": "פוקס", "sysName": "פוקס", "lastDate": "05/03/2020", "activity": "[מעקב] — שלחתי תזכורת", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "רשתות הלבשה, טקסטיל, הנעלה ובתי כל-בו", "revenue": "6,422.1", "employees": "14,555"}, {"name": "פזגז", "sysName": "פזגז", "lastDate": "20/06/2018", "activity": "[אימייל] — נשלח מייל ראשון. עבר לפז. התקשר אופק שיהודית תתקשר לגבי שוב?", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "דלק, גז ואנרגיה", "revenue": "998", "employees": "464"}, {"name": "פלאפון", "sysName": "פלאפון", "lastDate": "29/05/2018", "activity": "[אימייל] — נשלח מייל ראשון. סיננה המנהלת לישכה שזה אמור להיות עם הדוברות", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תקשורת וטלויזיה", "revenue": "2,254", "employees": "1,672"}, {"name": "פלוס500", "sysName": "פלוס 500", "lastDate": "06/03/2022", "activity": "[מעקב] — שלחתי שוב", "status": "", "sector": "", "branch": "", "revenue": "", "employees": ""}, {"name": "פלזית תעשיות", "sysName": "פלזית תעשיות", "lastDate": "21/02/2019", "activity": "[מעקב] — כרגע לא רלוונטי... זה אצ ל רינה", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "פלסטיק", "revenue": "490", "employees": "370"}, {"name": "קבוצת אמן", "sysName": "קבוצת אמן", "lastDate": "22/05/2022", "activity": "[מעקב] — התחלף מזכירה לשולי עם אותו מייל. סינון עדין . אם בן לא אמר לתאם כנראה לא רלוונטי", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תוכנה ואינטגרציה", "revenue": "1,025", "employees": "3,050"}, {"name": "קבוצת גאון (לשעבר צנורות המזרח התיכון)", "sysName": "קבוצת גאון", "lastDate": "10/11/2022", "activity": "[אימייל] — נשלח מייל ראשון", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי מתכת", "revenue": "654.1", "employees": "632"}, {"name": "קבוצת ח.י. (H.Y. Group)", "sysName": "קבוצת ח.י", "lastDate": "06/12/2023", "activity": "[מעקב] — שלחתי לאורית שוב", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "מוצרי חשמל ביתיים", "revenue": "850", "employees": "450"}, {"name": "קימברלי-קלארק ישראל", "sysName": "קימברלי קלארק", "lastDate": "15/09/2019", "activity": "[מעקב] — ורד אחראית תרומות התקשרה וביקשה שניצור קשר אחרי החגים ונבדוק. חשוב לה מאוד שילוב של עובדי החברה! (בדרך כלל הם עושים דברים שקשורים למוצרים שלהם) יכולה רק תרומה של מוצרים", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "נייר וקרטון", "revenue": "1,410", "employees": "913"}, {"name": "קריאף גרופ", "sysName": "קריאף גרופ", "lastDate": "20/02/2022", "activity": "[מעקב] — ביום רביעי תעבור איתו על המייל כשהוא חוזר מהחופש . סיננו שתורמים לתל השומר", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "שילוח ועמילות מכס", "revenue": "836.6*", "employees": "180*"}, {"name": "קשרי תעופה", "sysName": "קשרי תעופה", "lastDate": "03/11/2022", "activity": "[מעקב] — שלחתי שוב", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "תיירות", "revenue": "508", "employees": "29*"}, {"name": "שסטוביץ", "sysName": "שסטוביץ", "lastDate": "05/02/2023", "activity": "[מעקב] — שלחתי שוב שאלה לאחראית תרומות", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "1,126", "employees": "550"}, {"name": "שראל פתרונות לוגיסטיים ומוצרים לרפואה מתקדמת", "sysName": "שראל פתרונות לוגיסטיים ומוצרים לרפואה מתקדמת בע\"מ", "lastDate": "28/12/2025", "activity": "[פנייה] — נושא: נשלח מייל לתיאום פגישה", "status": "לא ענו (סגור)", "sector": "מסחר", "branch": "סיטונאות קוסמטיקה, פרמצבטיקה וכימיקלים", "revenue": "1,739.2", "employees": "186"}, {"name": "תדביק", "sysName": "תדביק", "lastDate": "26/06/2018", "activity": "[מעקב] — להזכיר באמצע יולי. בחופשה עד סוף אוגוסט. אמורה לדבר עם גבי??", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "נייר וקרטון", "revenue": "670", "employees": "700"}, {"name": "תדהר", "sysName": "תדהר", "lastDate": "16/02/2020", "activity": "[מעקב] — סינון סופי", "status": "לא ענו (סגור)", "sector": "בניה", "branch": "ייזום ובניה", "revenue": "2,700", "employees": "1,100*"}, {"name": "תדיראן סוללות", "sysName": "תדיראן סוללות", "lastDate": "20/12/2020", "activity": "[מעקב] — סינון פעם שלישית", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מוצרי חשמל", "revenue": "498.7", "employees": "595"}, {"name": "תיגבור", "sysName": "תיגבור", "lastDate": "06/12/2023", "activity": "[מעקב] — הקפצתי לה שוב", "status": "לא ענו (סגור)", "sector": "שרותים", "branch": "כח אדם", "revenue": "1,330.7", "employees": "20,060"}, {"name": "תנובה", "sysName": "תנובה", "lastDate": "01/02/2024", "activity": "[מעקב] — שלחתי מייל למנכל החדש - גדי קוניא", "status": "לא ענו (סגור)", "sector": "תעשיה", "branch": "מזון משקאות וטבק", "revenue": "9,000.0*", "employees": "6,000"}];
+const STORE = 'https://jsonblob.com/api/jsonBlob/019f8576-8bb7-7f63-9053-1816b5576080';
+
+let decisions = {};   // company name -> 'again' | 'skip'
+let loaded = false;
+let saving = {};
+let filter = 'pending';
+let query = '';
+
+const CHIP_CLASS = {
+  'תרומה': 'donate', 'מאמצות': 'adopt', 'תואמה פגישה': 'meet',
+  'פנינו': 'reach', 'בתהליך': 'reach', 'לא ענו (סגור)': 'closed'
+};
+
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function relDate(s) {
+  const m = /^(\d{2})\/(\d{2})\/(\d{4})$/.exec(s);
+  if (!m) return '';
+  const d = new Date(+m[3], +m[2] - 1, +m[1]);
+  const years = (Date.now() - d.getTime()) / (365.25 * 24 * 3600 * 1000);
+  if (years < 1) { const mo = Math.max(1, Math.round(years * 12)); return 'לפני כ־' + mo + ' חודשים'; }
+  const y = Math.round(years * 10) / 10;
+  return 'לפני ' + (y >= 2 ? Math.round(y) + ' שנים' : 'כשנה');
+}
+
+function chipHtml(status) {
+  if (!status) return '';
+  return status.split(' / ').map(s => {
+    const cls = CHIP_CLASS[s] || 'closed';
+    return '<span class="chip ' + cls + '">' + esc(s) + '</span>';
+  }).join(' ');
+}
+
+function setSync(msg, isError) {
+  const el = document.getElementById('syncStatus');
+  el.textContent = msg;
+  el.style.color = isError ? 'var(--skip)' : '';
+}
+
+function render() {
+  const list = document.getElementById('list');
+  const decidedCount = DATA.filter(c => decisions[c.name]).length;
+  const againCount = DATA.filter(c => decisions[c.name] === 'again').length;
+  const skipCount = DATA.filter(c => decisions[c.name] === 'skip').length;
+
+  document.getElementById('counter').textContent = decidedCount + ' מתוך ' + DATA.length;
+  document.getElementById('barfill').style.width = (100 * decidedCount / DATA.length) + '%';
+
+  const banner = document.getElementById('doneBanner');
+  if (loaded && decidedCount === DATA.length) {
+    banner.style.display = 'block';
+    banner.textContent = 'סיימת! ' + againCount + ' חברות לפנייה מחודשת, ' + skipCount + ' להתעלמות.';
+  } else { banner.style.display = 'none'; }
+
+  const q = query.trim();
+  const visible = DATA.filter(c => {
+    const d = decisions[c.name];
+    if (filter === 'pending' && d) return false;
+    if (filter === 'again' && d !== 'again') return false;
+    if (filter === 'skip' && d !== 'skip') return false;
+    if (q && !(c.name + ' ' + c.sysName).includes(q)) return false;
+    return true;
+  });
+
+  const empty = document.getElementById('empty');
+  if (!visible.length) {
+    empty.style.display = 'block';
+    empty.textContent = !loaded ? 'טוען החלטות…' :
+      q ? 'לא נמצאו חברות תואמות לחיפוש.' :
+      filter === 'pending' ? 'אין חברות שממתינות להחלטה 🎉' : 'אין עדיין חברות ברשימה הזו.';
+  } else { empty.style.display = 'none'; }
+
+  list.innerHTML = visible.map(c => {
+    const d = decisions[c.name];
+    const busy = saving[c.name];
+    const meta = [];
+    if (c.sector) meta.push('מגזר: <b>' + esc(c.sector) + '</b>');
+    if (c.branch) meta.push('ענף: <b>' + esc(c.branch) + '</b>');
+    if (c.revenue) meta.push('מחזור 2024: <b>' + esc(c.revenue) + ' מ׳ ₪</b>');
+    if (c.employees) meta.push('מועסקים: <b>' + esc(c.employees) + '</b>');
+    const activity = c.activity
+      ? '<div class="activity"><span class="when">פעילות אחרונה' + (c.lastDate ? ' · ' + esc(c.lastDate) + (relDate(c.lastDate) ? ' (' + relDate(c.lastDate) + ')' : '') : '') + '</span>' + esc(c.activity) + '</div>'
+      : '<p class="no-activity">אין תיעוד פעילות במערכת.</p>';
+    let footer;
+    if (!loaded) {
+      footer = '<div class="actions"><span class="no-activity">טוען…</span></div>';
+    } else if (busy) {
+      footer = '<div class="verdict">שומר…</div>';
+    } else if (!d) {
+      footer = '<div class="actions">' +
+          '<button class="again" data-act="again" data-name="' + esc(c.name) + '">לפנות שוב</button>' +
+          '<button class="skip" data-act="skip" data-name="' + esc(c.name) + '">להתעלם</button>' +
+        '</div>';
+    } else {
+      footer = '<div class="verdict ' + d + '">' + (d === 'again' ? '✓ מסומנת לפנייה מחודשת' : '✕ מסומנת להתעלמות') +
+          ' <button class="undo" data-act="pending" data-name="' + esc(c.name) + '">ביטול</button></div>';
+    }
+    return '<article class="card' + (d ? ' decided-' + d : '') + '">' +
+      '<div class="card-head"><h2>' + esc(c.name) + '</h2>' +
+      (c.sysName && c.sysName !== c.name ? '<span class="sysname">במערכת: ' + esc(c.sysName) + '</span>' : '') +
+      chipHtml(c.status) + '</div>' +
+      (meta.length ? '<p class="meta">' + meta.join('') + '</p>' : '') +
+      activity + footer + '</article>';
+  }).join('');
+}
+
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+async function fetchStore() {
+  const r = await fetch(STORE, { cache: 'no-store' });
+  if (!r.ok) throw new Error('HTTP ' + r.status);
+  return r.json();
+}
+
+async function load(silent) {
+  try {
+    const data = await fetchStore();
+    decisions = (data && data.decisions) || {};
+    loaded = true;
+    setSync('מסונכרן ✓ ההחלטות נשמרות בענן');
+    render();
+  } catch (e) {
+    if (!silent) setSync('לא הצלחתי לטעון את ההחלטות — בדוק חיבור לאינטרנט ורענן.', true);
+  }
+}
+
+async function decide(name, state) {
+  if (saving[name] || !loaded) return;
+  const prev = decisions[name];
+  saving[name] = true;
+  if (state === 'pending') delete decisions[name]; else decisions[name] = state;
+  render();
+  try {
+    const latest = await fetchStore();
+    const merged = (latest && latest.decisions) || {};
+    if (state === 'pending') delete merged[name]; else merged[name] = state;
+    const w = await fetch(STORE, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ decisions: merged, updatedAt: Date.now() })
+    });
+    if (!w.ok) throw new Error('HTTP ' + w.status);
+    decisions = merged;
+    delete saving[name];
+    render();
+  } catch (e) {
+    if (prev === undefined) delete decisions[name]; else decisions[name] = prev;
+    delete saving[name];
+    render();
+    toast('השמירה נכשלה — נסה שוב');
+  }
+}
+
+document.getElementById('list').addEventListener('click', e => {
+  const btn = e.target.closest('button[data-act]');
+  if (!btn) return;
+  decide(btn.dataset.name, btn.dataset.act);
+});
+
+document.getElementById('tabs').addEventListener('click', e => {
+  const b = e.target.closest('button[data-f]');
+  if (!b) return;
+  filter = b.dataset.f;
+  document.querySelectorAll('#tabs button').forEach(x => x.setAttribute('aria-pressed', x === b ? 'true' : 'false'));
+  render();
+});
+
+document.getElementById('search').addEventListener('input', e => { query = e.target.value; render(); });
+
+document.getElementById('copyAgain').addEventListener('click', () => {
+  const names = DATA.filter(c => decisions[c.name] === 'again').map(c => c.name);
+  if (!names.length) { toast('עוד לא סומנו חברות לפנייה מחודשת'); return; }
+  navigator.clipboard.writeText(names.join('\n')).then(
+    () => toast('הועתקו ' + names.length + ' חברות'),
+    () => toast('ההעתקה נכשלה — נסה שוב'));
+});
+
+document.getElementById('dlCsv').addEventListener('click', () => {
+  const rows = [['שם החברה','שם במערכת','סטטוס במאגר','תאריך פנייה אחרון','החלטה']];
+  DATA.forEach(c => {
+    const d = decisions[c.name];
+    rows.push([c.name, c.sysName, c.status, c.lastDate, d === 'again' ? 'לפנות שוב' : d === 'skip' ? 'להתעלם' : 'טרם הוחלט']);
+  });
+  const csv = '﻿' + rows.map(r => r.map(x => '"' + String(x).replace(/"/g, '""') + '"').join(',')).join('\r\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'החלטות פנייה מחודשת.csv';
+  a.click();
+  URL.revokeObjectURL(a.href);
+});
+
+setSync('טוען החלטות…');
+render();
+load(false);
+setInterval(() => { if (Object.keys(saving).length === 0) load(true); }, 30000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) load(true); });
+</script>
+
 </body>
 </html>
